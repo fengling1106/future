@@ -11,6 +11,6 @@ import com.valen.future.dao.BaseDAO;
  * @Description workrecord表dao访问接口
  */
 public interface IWorkRecordDAO extends BaseDAO<WorkRecord>{
-	//根据用户名获取用户信息
+	//根据用户名和日期获取当日记录
 	public WorkRecord getWorkRecordByUserName(Map<String, Object> hashMap);	
 }

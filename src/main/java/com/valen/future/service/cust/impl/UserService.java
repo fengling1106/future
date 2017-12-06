@@ -71,7 +71,6 @@ public class UserService implements IUserService {
 	public User getUserByUserName(String userName) {
     	Map<String, Object> map=new HashMap<String, Object>();
 		map.put("userName", "\'"+userName+"\'");
-		
 
 		return null;
 	}

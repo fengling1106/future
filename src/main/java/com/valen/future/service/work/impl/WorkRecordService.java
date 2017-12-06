@@ -3,6 +3,8 @@ package com.valen.future.service.work.impl;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -41,5 +43,24 @@ public class WorkRecordService implements IWorkRecordService {
 			log.info(e.getMessage());
 		}
 	}
-	
+
+	public WorkRecord getWorkRecordByUserNameAndDate(String userName, String strDate) throws NoSuchAlgorithmException, UnsupportedEncodingException
+	{
+		WorkRecord workRecord = null;
+		
+		try{
+			Map<String,Object> map = new HashMap<String, Object>();
+			map.put("userName", "\'"+userName+"\'");
+			map.put("strDate", "\'"+strDate+"\'");
+			workRecordDao.getWorkRecordByUserName(map);
+		}
+		catch (Exception e)
+		{
+			log.info(e.getMessage());			
+		}
+				
+		return workRecord;
+		
+	}
 }
+
