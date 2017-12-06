@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<!--   
+    namespace：必须与对应的接口全类名一致  
+    id:必须与对应接口的某个对应的方法名一致       
+ -->  
+ <mapper namespace="com.valen.future.dao.cust.IUserDAO">
+	<resultMap id="baseResultMap" type="com.valen.future.bean.cust.User">
+		<result column="userName" property="userName" jdbcType="VARCHAR" />
+		<result column="userPassword" property="userPassword" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="state" property="state" jdbcType="INTEGER" />
+		<result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="modifyDate" property="modifyDate" jdbcType="TIMESTAMP" />
+	</resultMap>
+  	<insert id="create" parameterType="com.valen.future.bean.cust.User">
+ 		insert into tb_user(user_name,user_password,email,state,create_date,modify_date) values(#{userName},#{userPasswd},#{email},#{state},#{createDate},#{modifyDate})
+ 	</insert>
+	
+    <select id="getUserByUserName" parameterType="java.util.Map" resultType="com.valen.future.bean.cust.User">
+    	select user_name as userName,user_password as userPasswd,email,state,create_date as createDate,modify_date as modifyDate from tb_user where user_name=${userName}
+    </select>
+    
+    <select id="checkUserByNameAndPwd" parameterType="java.util.Map" resultType="com.valen.future.bean.cust.User">
+    	select user_name as userName,user_password as userPasswd,email,state,create_date as createDate,modify_date as modifyDate from tb_user where user_name=${userName} and user_password=${userPasswd}
+    </select>          
+ </mapper>

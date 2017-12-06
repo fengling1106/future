@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新用户注册</title>
+<script type="text/javascript" src="/future/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#username").blur(function(){
+		$("#username").css("background-color","#D6D6FF");
+		var v_username=$("#username").text();
+		var v_username2 = v_username.toLowerCase();
+		if("" == v_username){
+			$("#div1").text("姓名不能为空");
+			}	
+		else if (v_username.length < 4 || v_username.length > 20){
+			$("#div1").text("姓名输入的长度4-20个字符！") ;
+		  }
+		else if(!checkname(v_username)){
+			$("#div1").text("输入中含有非法字符") ;
+		}
+		else{
+			$("#div1").text("");
+		}	  
+		});
+});
+
+function checkname(username2){
+        var v_username = username2.toLowerCase();
+		for (var i = 0; i < v_username.length; i++) { 
+			var charname = v_username.charAt(i); 
+			if (!(charname >= 0 && charname <= 9) && (!(charname >= 'a' && charname <= 'z')) && (charname != '_')) { 
+				return false; 
+			} 
+		} 
+		}
+</script>
+
+
+</head>
+<body>
+	<form name="regform" method="post" action="2.html"
+		onsubmit="return check()">
+		<table>
+			<tr>
+				<td>用户名：</td>
+				<td><input id="username" type="text" name="username" onblur="check()">
+					<div id="div1" style="display: inline"></div></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input id="pwd" type="password" name="pwd"
+					onblur="check()">
+					<div id="div2" style="display: inline"></div></td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td><input id="repwd" type="password" name="repwd"
+					onblur="check()">
+					<div id="div3" style="display: inline"></div></td>
+			</tr>
+			<tr>
+				<td>电子邮件地址：</td>
+				<td><input id="email" type="text" name="email" onblur="check()">
+					<div id="div4" style="display: inline"></div></td>
+			</tr>
+			<tr align="center">
+				<td align="center"><input type="submit" value="提交" name="tect6"><input
+					type="reset" value="重置" name="text7"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
