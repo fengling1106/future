@@ -19,9 +19,10 @@ public class WorkRecord implements Serializable {
 	
 	private Long workId;
 	private String userName;
-	private Timestamp createDate;
+	private String noteDate;
 	private Integer state;
 	private String comment;
+	private Timestamp createDate;	
 	private Timestamp modifyDate;
 	
 	public Long getWorkId()
@@ -33,6 +34,15 @@ public class WorkRecord implements Serializable {
 		this.workId =workId;
 	}		
 	
+	public String getNoteDate()
+	{	
+		return noteDate;
+	}
+	public void setNoteDate(String noteDate)
+	{
+		this.noteDate =noteDate;
+	}	
+	
 	public String getUserName()
 	{	
 		return userName;
@@ -41,6 +51,7 @@ public class WorkRecord implements Serializable {
 	{
 		this.userName =userName;
 	}	
+
 	
 	public Timestamp getCreateDate()
 	{

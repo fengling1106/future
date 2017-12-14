@@ -47,8 +47,10 @@ $(function(){
 	
 	$("#repwd").blur(function(){
 		var v_repwd=$(this).val();
-		var v_pwd=$("#pwd").val();
+		var v_pwd=$("#userPasswd").val();
 		if(v_repwd != v_pwd){
+			alert(v_repwd);
+			alert(v_pwd);
 			$("#div3").text("输入密码不一致！") ;
 			$(this).val("");
 		}

@@ -16,7 +16,7 @@
 <div class="main">
   <div class="face"></div>
   <div class="login">
-        <form method="post" action="<c:url value="/user/login.htm"/>">
+        <form method="post" action="<c:url value="/user/login.html"/>">
         <p>
           <input type="text" name="userName" required type="text" min="6" max="30" />
           <label alt="请输入用户名" placeholder="用户名"></label>

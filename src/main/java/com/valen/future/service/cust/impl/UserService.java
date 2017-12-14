@@ -19,6 +19,7 @@ import com.valen.future.dao.cust.IUserDAO;
 import com.valen.future.service.cust.IUserService;
 
 
+
 @Service
 @Transactional
 public class UserService implements IUserService {
@@ -35,7 +36,7 @@ public class UserService implements IUserService {
 		//检查邮箱是否唯一
 		
 		//注册新用户
-		user.setState(2);//设置用户为待邮件确认状态
+		user.setState(1);//设置用户为待邮件确认状态
 		user.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		user.setModifyDate(user.getCreateDate());
 		userDao.create(user);

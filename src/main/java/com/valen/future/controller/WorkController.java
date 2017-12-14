@@ -32,13 +32,14 @@ public class WorkController {
 		return mav;
 	}
 	
-	@RequestMapping(path="/addrecord",method=RequestMethod.POST)
-	public ModelAndView addNewWorkRecord(WorkRecord workRecord,HttpServletRequest request, HttpServletResponse response) throws NoSuchAlgorithmException, UnsupportedEncodingException{
-		ModelAndView mav = new ModelAndView();
+	@RequestMapping(path="/saverecord",method=RequestMethod.POST)
+	public void addNewWorkRecord(WorkRecord workRecord,HttpServletRequest request, HttpServletResponse response) throws NoSuchAlgorithmException, UnsupportedEncodingException{
+		//ModelAndView mav = new ModelAndView();
 		workRecord.setUserName(request.getSession().getAttribute("userName").toString());
 		workRecordService.addWorkRecord(workRecord);
-		mav.setViewName("work/mainWork");
-		return mav;
+		//mav.setViewName("work/mainWork");
+		//mav.addObject(workRecord);
+		//return mav;
 	}
 
 }

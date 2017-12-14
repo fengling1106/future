@@ -7,18 +7,23 @@
  -->  
  <mapper namespace="com.valen.future.dao.work.IWorkRecordDAO">
 	<resultMap id="baseResultMap" type="com.valen.future.bean.work.WorkRecord">
+	    <result column="workId" property="workId" jdbcType="INTEGER" />
 		<result column="userName" property="userName" jdbcType="VARCHAR" />
-	    <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="noteDate" property="noteDate" jdbcType="VARCHAR" />
+        <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />		
 		<result column="state" property="state" jdbcType="SMALLINT" />	    
-		<result column="comment" property="comment" jdbcType="VARCHAR" />	
+		<result column="comment" property="comment" jdbcType="VARCHAR" />		    		
 		<result column="modifyDate" property="modifyDate" jdbcType="TIMESTAMP" />
 	</resultMap>
   	<insert id="insert" parameterType="com.valen.future.bean.work.WorkRecord">
- 		insert into tb_workrecord(user_name,create_date,state,comment,modify_date) values(#{userName},#{createDate},#{state},#{comment},#{modifyDate})
+ 		insert into tb_workrecord(user_name,create_date,note_date,state,comment,modify_date) values(#{userName},#{createDate},#{noteDate},#{state},#{comment},#{modifyDate})
  	</insert>
 	
     <select id="getWorkRecordByUserName" parameterType="java.util.Map" resultType="com.valen.future.bean.work.WorkRecord">
-    	select user_name as userName,create_date as createDate,state,work_record as workRecord,modify_date as modifyDate from tb_workrecord where user_name=${userName} and date_format(create_date,'%Y-%m-%d')={createDate} 
+    	select work_id as workId,user_name as userName,note_date as noteDate,create_date as createDate,state,comment as comment,modify_date as modifyDate from tb_workrecord where user_name=${userName} and note_date=${noteDate}  
     </select>
-          
+    
+    <update id="updateCommentByUserName" parameterType="java.util.Map"  >
+    	update tb_workrecord set comment = #{comment} where user_name=#{userName} and note_date=#{noteDate} 
+    </update>          
  </mapper>
