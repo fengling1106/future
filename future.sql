@@ -25,7 +25,8 @@ CREATE TABLE `tb_user` (
   `email` varchar(64) COLLATE utf8_bin DEFAULT NULL,  
   `state` tinyint(4) DEFAULT NULL,
   `create_date` datetime DEFAULT NULL,
-  `modify_date` datetime DEFAULT NULL
+  `modify_date` datetime DEFAULT NULL,
+   PRIMARY KEY (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
@@ -35,10 +36,13 @@ CREATE TABLE `tb_user` (
 DROP TABLE IF EXISTS `tb_workrecord`;
 CREATE TABLE `tb_workrecord` (
   `work_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(30) COLLATE utf8_bin DEFAULT NULL,
+  `user_name` varchar(30) COLLATE utf8_bin NOT NULL,
+  `note_date` varchar(20) DEFAULT NULL,
   `create_date` datetime DEFAULT NULL, 
   `state` tinyint(4) DEFAULT NULL,
   `comment` varchar(8192) DEFAULT NULL,
   `modify_date` datetime DEFAULT NULL,
-   PRIMARY KEY (`work_id`)
+   PRIMARY KEY (`work_id`),
+   unique (`note_date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
