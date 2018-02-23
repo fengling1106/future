@@ -12,6 +12,10 @@
 </head>
 <body>
 	<div class="face">
+	    <div class="login">
+			<a id="userlogin" href="login.jsp">登录</a>
+			<a id="userreg" href="register.jsp">注册</a>
+        </div>		
 		<div class="module">
 			<form method="post" action="<c:url value="/user/reguser.htm"/>">
 				<button >我的项目</button>

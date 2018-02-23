@@ -16,8 +16,7 @@
 		<div class="headtitle">今日工作</div>
 		<div class="worktext">	
 			<form method="post" style="text-align:center" action="<c:url value="/work/saverecord.html"/>">	
-                <textarea style="width:98%;height:200px;color:blue;" id="comment" name="comment">
-				</textarea>	
+                <textarea style="width:98%;height:200px;color:blue;" id="comment" name="comment"></textarea>	
 				<button type="submit" >保存</button>
 			</form>	
 		</div>

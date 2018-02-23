@@ -22,7 +22,7 @@ if(null != userName)
 </head>
 <body>
 	<div class="face">
-	    <div>
+	    <div class="login">
 			<input id="userlogin" type="text" value=""/>
 			<div id="wwe" style="display: inline"></div>
         </div>

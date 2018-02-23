@@ -69,8 +69,8 @@ public class WorkRecordService implements IWorkRecordService {
 		
 		try{
 			Map<String,Object> map = new HashMap<String, Object>();
-			map.put("userName", "\'"+userName+"\'");
-			map.put("noteDate", "\'"+strDate+"\'");
+			map.put("userName", userName);
+			map.put("noteDate", strDate);
 			WorkRecord workRecord=workRecordDao.getWorkRecordByUserName(map);
 			return workRecord;
 		}
@@ -79,9 +79,7 @@ public class WorkRecordService implements IWorkRecordService {
 			log.info(e.getMessage());	
 			return null;
 		}
-				
-		
-		
+						
 	}
 }
 

@@ -20,7 +20,7 @@
  	</insert>
 	
     <select id="getWorkRecordByUserName" parameterType="java.util.Map" resultType="com.valen.future.bean.work.WorkRecord">
-    	select work_id as workId,user_name as userName,note_date as noteDate,create_date as createDate,state,comment as comment,modify_date as modifyDate from tb_workrecord where user_name=${userName} and note_date=${noteDate}  
+    	select work_id as workId,user_name as userName,note_date as noteDate,create_date as createDate,state,comment as comment,modify_date as modifyDate from tb_workrecord where user_name=#{userName} and note_date=#{noteDate}  
     </select>
     
     <update id="updateCommentByUserName" parameterType="java.util.Map"  >
