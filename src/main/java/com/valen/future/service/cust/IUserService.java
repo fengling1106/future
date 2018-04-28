@@ -2,6 +2,7 @@ package com.valen.future.service.cust;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import com.valen.future.bean.cust.User;
 
@@ -20,5 +21,8 @@ public interface IUserService {
 	
 	//根据用户名获取用户信息
 	public  User getUserByUserName(String userName);
+	
+	//根据用户名获取用户信息
+	public  List<User> getUser();
 	
 }

@@ -27,10 +27,10 @@ $(function(){
 			$("#div1").text("姓名不能为空");
 			}	
 		else if (v_username.length < 4 || v_username.length > 20){
-			$("#div1").text("姓名输入的长度4-20个字符！") ;
+			$("#div1").text("长度4-20个字符！") ;
 		  }
 		else if(!checkname(v_username)){
-			$("#div1").text("输入中含有非法字符");	
+			$("#div1").text("含有非法字符");	
 			}		
 		else{
 			$("#div1").text("符合要求！") ;
@@ -43,6 +43,9 @@ $(function(){
 		if(v_pwd.length<6 || v_pwd.length>30){
 			$("#div2").text("密码长度太短！") ;
 		}
+		else{
+			$("#div2").text("符合要求！") ;
+		}
 	});
 	
 	$("#repwd").blur(function(){
@@ -54,13 +57,20 @@ $(function(){
 			$("#div3").text("输入密码不一致！") ;
 			$(this).val("");
 		}
+		else{
+			$("#div3").text("符合要求！") ;
+		}
 	});	
 	
 	$("#email").blur(function(){
 		var v_email=$(this).val();
 		if("" == v_email){
 			$("#div4").text("邮件不能为空");
-			}			
+		}
+		else{
+			$("#div4").text("符合要求！") ;
+		}
+		
 	});
 });
 
@@ -83,24 +93,24 @@ function checkname(username){
 		<form class="regform"  method="post" action="<c:url value="/user/register.html"/>">
 			<table class="regtable">
 				<tr>
-					<td><div>用&nbsp&nbsp户&nbsp&nbsp名:</div></td>
-					<td><input id="userName" type="text" name="userName">
-						<div id="div1" style="display: inline"></div></td>
+					<td><div class="txtjustify" >用 户 名<span></span></div></td>
+					<td><input id="userName" type="text" name="userName" placeholder="请输入用户名" required>
+						<div id="div1" class="tip" style="display: inline"></div></td>
 				</tr>
 				<tr>
-					<td ><div>密&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp码:</div></td>
-					<td><input id="userPasswd" type="password" name="userPasswd">
-						<div id="div2" style="display: inline"></div></td>
+					<td ><div class="txtjustify">新 密 码<span></span></div></td>
+					<td><input id="userPasswd" type="password" name="userPasswd" placeholder="请输入密码" required>
+						<div id="div2" class="tip"  style="display: inline"></div></td>
 				</tr>
 				<tr>
-					<td ><div>确认密码:</div></td>
-					<td><input id="repwd" type="password" name="repwd">
-						<div id="div3" style="display: inline"></div></td>
+					<td ><div class="txtjustify">确 认 密 码<span></span></div></td>
+					<td><input id="repwd" type="password" name="repwd" placeholder="请输入密码" required>
+						<div id="div3" class="tip"  style="display: inline"></div></td>
 				</tr>		
 				<tr>
-					<td ><div>电子邮箱:</div></td>
-					<td><input id="email" type="text" name="email">
-						<div id="div4" style="display: inline"></div></td>
+					<td ><div class="txtjustify">电 子 邮 箱<span></span></div></td>
+					<td><input id="email" type="text" name="email" placeholder="请输入邮箱" required>
+						<div id="div4" class="tip"  style="display: inline"></div></td>
 				</tr>						
 			</table> 
 		<div class="regbutton">
@@ -108,5 +118,7 @@ function checkname(username){
         </div>					
 		</form>	
 	</div>
+	<p class="foot">&copy 2018 lejujia.top Inc All Rights Reserved. </p>
 </body>
+
 </html>

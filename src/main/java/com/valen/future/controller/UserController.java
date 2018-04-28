@@ -1,5 +1,6 @@
 package com.valen.future.controller;
 
+import java.util.List;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
@@ -77,5 +78,29 @@ public class UserController {
 	
  		
 	  return mav;
+	}
+	
+	@RequestMapping(path="/queryuser",method=RequestMethod.POST)
+	public ModelAndView queryUser(String userName,HttpSession session) throws NoSuchAlgorithmException, UnsupportedEncodingException
+	{
+		ModelAndView mav = new ModelAndView();
+		try{
+			List<User> userList = userService.getUser();
+			if(null!=userList){
+				session.setAttribute("users", userList);
+				mav.setViewName("user/queryresult");
+				mav.addObject("users",userList);	
+			}
+			else
+			{
+				mav.setViewName("user/queryresult");
+				mav.addObject("users",userList);	
+			}			
+		}
+		catch(Exception e)
+		{
+			log.info(e.getMessage());
+		}
+		return mav;	
 	}	
 }

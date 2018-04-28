@@ -1,5 +1,6 @@
 package com.valen.future.dao.cust;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,9 @@ public interface IUserDAO extends BaseDAO<User> {
 	//根据用户名获取用户信息
 	public User getUserByUserName(Map<String, Object> hashMap);	
 
+	//无参数的查询
+	public List<User> getUser();
+	
 	//根据用户名和密码检查
 	public User checkUserByNameAndPwd(Map<String, Object> hashMap);	
 }

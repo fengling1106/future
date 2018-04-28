@@ -13,31 +13,30 @@
 	<!--  bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName" value="java:comp/env/jdbc/cmos" />
 	</bean-->
-    <bean id="dataSource"  
+    <!--bean id="dataSource"  
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
-        <property name="url" value="jdbc:mysql://localhost:3306/future" />  
+        <property name="url" value="jdbc:mysql://localhost:3306/futurei?useUnicode=true&amp;characterEncoding=UTF-8" />  
         <property name="username" value="future" />  
         <property name="password" value="future123" />  
-    </bean> 
+    </bean--> 
 	<!-- 配置c3p0数据源 -->
-	<!-- bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/future" />
 		<property name="user" value="future" />
-		<property name="password" value="future123" />
-        <property name="setAutoCommitOnClose" value="false"/>
+		<property name="password" value="future123" />       
 		<property name="minPoolSize" value="5"/>
 		<property name="maxPoolSize" value="30"/>
 		<property name="initialPoolSize" value="5"/>
 		<property name="maxIdleTime" value="60"/>
 		<property name="acquireIncrement" value="30"/>
-		<property name="maxStatements" value="0"/>
+		<property name="maxStatements" value="5"/>
 		<property name="idleConnectionTestPeriod" value="60"/>
 		<property name="acquireRetryAttempts" value="30"/>
 		<property name="breakAfterAcquireFailure" value="true"/>
 		<property name="testConnectionOnCheckout" value="true"/>
-	</bean-->  
+	</bean>  
 
 	<!-- MyBatis 配置-->
 	<!-- 数据库事务配置 -->

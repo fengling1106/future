@@ -21,6 +21,10 @@
     <select id="getUserByUserName" parameterType="java.util.Map" resultType="com.valen.future.bean.cust.User">
     	select user_name as userName,user_password as userPasswd,email,state,create_date as createDate,modify_date as modifyDate from tb_user where user_name=${userName}
     </select>
+
+    <select id="getUser" resultMap="baseResultMap">
+    	select user_name as userName,user_password as userPasswd,email,state,create_date as createDate,modify_date as modifyDate from tb_user
+    </select>
     
     <select id="checkUserByNameAndPwd" parameterType="java.util.Map" resultType="com.valen.future.bean.cust.User">
     	select user_name as userName,user_password as userPasswd,email,state,create_date as createDate,modify_date as modifyDate from tb_user where user_name=${userName} and user_password=${userPasswd}

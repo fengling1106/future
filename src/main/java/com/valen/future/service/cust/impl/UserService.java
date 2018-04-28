@@ -75,4 +75,11 @@ public class UserService implements IUserService {
 
 		return null;
 	}
+	
+	public List<User> getUser() {
+    	
+		List<User> users=userDao.getUser();
+
+		return users;
+	}	
 }
