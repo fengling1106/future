@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+
+body{
+	width:100%;
+	height:100%;
+	background-color:#87CEEB;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+
+input{
+	width:120px;
+	height:30px;
+	padding:2px;
+	border:2px solid #CCC;
+	border-radius:10px;
+	outline:none;
+	font-size:20px;
+	text-indent:20px;
+}
+
+tr {
+	width:400px;
+	height:40px;	
+	margin:2px 0;
+}
+
+td {
+	width:140px;
+	height:40px;	
+	text-align:left;
+	font-size:20px;
+}
+
+/*文本两头对齐*/
+.showcloum { text-align: justify; width:100px; font-size:20px;  height:50px;}
+
+
+.regdiv{
+	width:400px;
+	height:480px;
+	border:0px solid #fff;
+	margin:2px auto;
+	/*background:rgba(65,105,255,0.5);*/
+	position:relative;
+	overflow:hidden;
+	text-align:left;
+}
+
+.tip{
+	font-size:8px;	
+	color:red;
+}
+
+.regform{
+margin-top:60px;	
+height:380px;
+/*border-style: dashed;*/ 
+border-width: 2px;
+border-color: #FFFACD;
+text-align:center;
+}
+
+.regtable{
+border-collapse:separate; border-spacing:2px;
+}
+
+
+.regbutton{
+position:relative;
+text-align:center;
+}
+
+.btn{
+	bottom:50px;
+	right:20px;
+	width:80px;
+	height:40px;
+	padding:2px;
+	border-radius:5px;
+	align:center;
+	outline:none;
+	box-shadow:0 0 4px rgba(0,0,0,0.2);
+	color:#FFF;
+	background-color:#0167cc;
+	font-size:20px;
+	position:float;
+}
+
+.foot{
+	bottom:5px;
+	font-size:12px;
+	text-align:center;
+}
+.cc {
+	width:60px;
+	height:30px;
+}
